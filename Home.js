@@ -4,17 +4,17 @@ import {SafeAreaView, Text, View} from 'react-native';
 import {TailwindProvider} from 'tailwind-rn';
 import utilities from './tailwind.json';
 import {useTailwind} from 'tailwind-rn';
-import Home from './Home';
 
-const App = () => {
+const Home = () => {
   const tw = useTailwind();
 
   return (
-    <TailwindProvider utilities={utilities}>
-      <SafeAreaView style={tw('h-full')} />
-      <Home />
-    </TailwindProvider>
+    <View style={tw('pt-11 items-center')}>
+      <View style={tw('bg-blue-200 px-3 py-1 rounded-full')}>
+        <Text style={tw('text-blue-800 font-semibold')}>Hello Tailwind</Text>
+      </View>
+    </View>
   );
 };
 
-export default App;
+export default Home;
