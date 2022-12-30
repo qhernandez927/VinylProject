@@ -17,6 +17,7 @@
     "@react-navigation/native": "^6.1.1",
     "react": "17.0.2",
     "react-native": "0.67.4",
+    "react-native-gesture-handler": "^2.1.1",
     "tailwind-rn": "^4.2.0"
   },
   "devDependencies": {
