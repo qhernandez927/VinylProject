@@ -16,6 +16,7 @@ import {firebase} from '@react-native-firebase/auth';
 const App = () => {
   const [user, setUser] = useState({loggedIn: false});
   const Stack = createNativeStackNavigator();
+  const tw = useTailwind();
 
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged(user => {
@@ -30,12 +31,10 @@ const App = () => {
       unsubscribe();
     };
   }, []);
-  const tw = useTailwind();
 
   return (
     <TailwindProvider utilities={utilities}>
       <NavigationContainer>
-        <SafeAreaView style={tw('h-full')} />
         <Stack.Navigator
           initialRouteName="Login"
           screenOptions={{

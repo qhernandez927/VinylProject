@@ -2,21 +2,21 @@ import {Props} from './Login';
 import React, {useState} from 'react';
 import {
   Alert,
-  Image,
-  ImageBackground,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
-import auth, {firebase} from '@react-native-firebase/auth';
+import auth from '@react-native-firebase/auth';
+import {useTailwind} from 'tailwind-rn';
 
 const NewUser = () => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const tw = useTailwind();
 
   //TODO:
   // Figure out how to strore additional user info in firebase auth
@@ -46,88 +46,58 @@ const NewUser = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View
+      style={tw(
+        'flex items-center content-center justify-center bg-neutral-900 h-full',
+      )}>
       <TextInput
-        style={styles.textInput}
+        style={tw(
+          'border-indigo-700 rounded-lg text-2xl border-2 pl-2 w-72 h-10 m-1 ',
+        )}
         autoCapitalize="none"
         placeholder="First Name"
+        placeholderTextColor="#E2E8F0"
         onChangeText={userFirstName => setFirstName(userFirstName)}
       />
       <TextInput
-        style={styles.textInput}
+        style={tw(
+          'border-indigo-700 rounded-lg text-2xl border-2 pl-2 w-72 h-10 m-1',
+        )}
         autoCapitalize="none"
         placeholder="Last Name"
+        placeholderTextColor="#E2E8F0"
         onChangeText={userLastName => setLastName(userLastName)}
       />
       <TextInput
-        style={styles.textInput}
+        style={tw(
+          'border-indigo-700 rounded-lg text-2xl border-2 pl-2 w-72 h-10 m-1',
+        )}
         autoCapitalize="none"
         onChangeText={userEmail => setEmail(userEmail)}
         defaultValue={email}
         placeholder="Email"
+        placeholderTextColor="#E2E8F0"
       />
       <TextInput
-        style={styles.textInput}
+        style={tw(
+          'border-indigo-700 rounded-lg text-2xl border-2 pl-2 w-72 h-10 m-1',
+        )}
         autoCapitalize="none"
         placeholder="Password"
+        placeholderTextColor="#E2E8F0"
         secureTextEntry={true}
         onChangeText={userPassword => setPassword(userPassword)}
       />
 
       <TouchableOpacity
-        style={styles.button}
+        style={tw('bg-indigo-400 rounded-lg w-72 h-10 mt-3')}
         onPress={() => createNewUser(email, password)}>
-        <Text style={styles.buttonText}>Join The Fest!</Text>
+        <Text style={tw('text-slate-200 text-2xl text-center mt-1')}>
+          Start Lifting!
+        </Text>
       </TouchableOpacity>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  signInClickText: {
-    color: '#EAB84E',
-    fontSize: 20,
-    textDecorationLine: 'underline',
-  },
-  signInText: {
-    marginTop: 10,
-    color: 'white',
-    fontSize: 20,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 20,
-  },
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 73,
-    borderRadius: 4,
-    elevation: 3,
-    backgroundColor: 'black',
-    width: 300,
-  },
-  container: {
-    flex: 0.4,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    color: 'darkslateblue',
-    fontSize: 30,
-  },
-  textInput: {
-    fontSize: 25,
-    paddingLeft: 10,
-    borderRadius: 4,
-    borderWidth: 1,
-    width: 300,
-    height: 40,
-    margin: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default NewUser;

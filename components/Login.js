@@ -1,20 +1,14 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Alert,
-  TouchableOpacity,
-  ImageBackground,
-  Image,
-} from 'react-native';
+import {View, Text, StyleSheet, Alert, TouchableOpacity} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
 import {useState} from 'react';
 import auth from '@react-native-firebase/auth';
+import {useTailwind} from 'tailwind-rn';
 
 const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const tw = useTailwind();
 
   const signUserIn = (email, password) => {
     auth()
@@ -41,31 +35,47 @@ const Login = ({navigation}) => {
   // Leaving here for now
 
   return (
-    <View style={styles.container}>
+    <View
+      style={tw(
+        'flex items-center content-center justify-center bg-neutral-900 h-full',
+      )}>
+      <Text style={tw('text-4xl text-slate-200 mb-20 text-center')}>
+        Pick It Up. Put It Down.
+      </Text>
       <TextInput
-        style={styles.textInput}
+        style={tw(
+          'border-indigo-700 rounded-lg text-2xl border-2 pl-2 w-72 h-10 m-1 ',
+        )}
         autoCapitalize="none"
         onChangeText={userEmail => setEmail(userEmail)}
         defaultValue={email}
         placeholder="Email"
+        placeholderTextColor="#E2E8F0"
       />
       <TextInput
-        style={styles.textInput}
+        style={tw(
+          'border-indigo-700 rounded-lg text-2xl border-2 pl-2 w-72 h-10 m-1 ',
+        )}
         autoCapitalize="none"
         placeholder="Password"
+        placeholderTextColor="#E2E8F0"
         secureTextEntry={true}
         onChangeText={userPassword => setPassword(userPassword)}
       />
       <TouchableOpacity
-        style={styles.button}
+        style={tw('bg-indigo-400 rounded-lg w-72 h-10 mt-3 text-slate-200')}
         onPress={() => signUserIn(email, password)}>
-        <Text style={styles.buttonText}>Continue</Text>
+        <Text style={tw('text-slate-200 text-2xl text-center mt-1 ')}>
+          Continue
+        </Text>
       </TouchableOpacity>
 
-      <Text style={styles.signInText}>
+      <Text style={tw('text-slate-200 text-2xl text-center mt-3')}>
         {'New User? '}
         <Text
-          style={styles.signInClickText}
+          style={tw(
+            'text-indigo-400 decoration-solid decoration-indigo-400 text-2xl',
+          )}
           // On press should link to new View to create new account
           onPress={() => navigation.navigate('NewUser')}>
           Sign in

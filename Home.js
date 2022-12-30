@@ -14,7 +14,7 @@ const Home = () => {
   };
 
   return (
-    <View style={tw('pt-11 items-center')}>
+    <View style={tw('pt-20 items-center')}>
       <TouchableOpacity onPress={logOff}>
         <Text>Temp Log Out</Text>
       </TouchableOpacity>
