@@ -6,6 +6,7 @@ import utilities from './tailwind.json';
 import {useTailwind} from 'tailwind-rn';
 import Home from './Home';
 import Login from './components/Login';
+import NewUser from './components/NewUser';
 
 import {useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
@@ -14,6 +15,7 @@ import {firebase} from '@react-native-firebase/auth';
 
 const App = () => {
   const [user, setUser] = useState({loggedIn: false});
+  const Stack = createNativeStackNavigator();
 
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged(user => {
@@ -21,6 +23,7 @@ const App = () => {
         setUser({loggedIn: true});
       } else {
         setUser({loggedIn: false});
+        console.log(user);
       }
     });
     return () => {
@@ -31,9 +34,27 @@ const App = () => {
 
   return (
     <TailwindProvider utilities={utilities}>
-      <SafeAreaView style={tw('h-full')} />
-      <Login />
-      <Home />
+      <NavigationContainer>
+        <SafeAreaView style={tw('h-full')} />
+        <Stack.Navigator
+          initialRouteName="Login"
+          screenOptions={{
+            headerTitle: '',
+            headerTransparent: true,
+            headerStyle: {backgroundColor: 'transparent'},
+            headerBackVisible: true,
+            headerBackTitleVisible: false,
+          }}>
+          {user.loggedIn ? (
+            <Stack.Screen name="Home" component={Home} />
+          ) : (
+            <>
+              <Stack.Screen name="Login" component={Login} />
+              <Stack.Screen name="NewUser" component={NewUser} />
+            </>
+          )}
+        </Stack.Navigator>
+      </NavigationContainer>
     </TailwindProvider>
   );
 };
