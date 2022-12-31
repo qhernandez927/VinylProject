@@ -39,7 +39,10 @@ const Login = ({navigation}) => {
       style={tw(
         'flex items-center content-center justify-center bg-neutral-900 h-full',
       )}>
-      <Text style={tw('text-4xl text-slate-200 mb-20 text-center')}>REPS</Text>
+      <Text
+        style={tw('text-4xl text-slate-200 mb-10 text-center font-semibold')}>
+        REPS
+      </Text>
       <TextInput
         style={tw(
           'border-indigo-700 rounded-lg text-2xl border-2 pl-2 w-72 h-10 m-1 ',
