@@ -28,7 +28,7 @@ const Home = () => {
             return (
               <MaterialCommunityIcon
                 name="weight-lifter"
-                size={size}
+                size={40}
                 color={color}
               />
             );
@@ -37,10 +37,22 @@ const Home = () => {
             return <EntypoIcon name="ticket" size={size} color={color} />;
           }
         },
-        headerShown: false,
-        tabBarStyle: {backgroundColor: '#171717'},
-        tabBarActiveTintColor: '#4338CA',
-        tabBarInactiveTintColor: '#818CF8',
+        headerShown: true,
+        headerStyle: {
+          backgroundColor: '#262626',
+          height: '10%',
+          shadowRadius: 0,
+          shadowOffset: {height: 0},
+        },
+        headerTitle: 'Work Out',
+        tabBarStyle: {
+          backgroundColor: '#262626',
+          height: '10%',
+          borderTopWidth: 0,
+        },
+        tabBarActiveTintColor: '#818CF8',
+        tabBarInactiveTintColor: '#4338CA',
+        tabBarShowLabel: false,
       })}>
       <Tab.Screen name="Exercises" component={Exercises} />
     </Tab.Navigator>
