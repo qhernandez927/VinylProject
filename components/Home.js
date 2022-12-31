@@ -7,6 +7,7 @@ import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIc
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import Workout from './Workout';
+import Profile from './Profile';
 
 const Home = () => {
   const Tab = createBottomTabNavigator();
@@ -33,8 +34,10 @@ const Home = () => {
               />
             );
           }
-          if (route.name === 'Tickets') {
-            return <EntypoIcon name="ticket" size={size} color={color} />;
+          if (route.name === 'Profile') {
+            return (
+              <FontAwesomeIcon name="user-circle-o" size={30} color={color} />
+            );
           }
         },
         headerShown: true,
@@ -44,17 +47,17 @@ const Home = () => {
           shadowRadius: 0,
           shadowOffset: {height: 0},
         },
-        headerTitle: 'Work Out',
         tabBarStyle: {
           backgroundColor: '#262626',
           height: '10%',
           borderTopWidth: 0,
         },
-        tabBarActiveTintColor: '#818CF8',
-        tabBarInactiveTintColor: '#4338CA',
+        tabBarActiveTintColor: '#4338CA',
+        tabBarInactiveTintColor: '#818CF8',
         tabBarShowLabel: false,
       })}>
       <Tab.Screen name="Workout" component={Workout} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 };
