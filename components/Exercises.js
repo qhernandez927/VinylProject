@@ -20,12 +20,11 @@ const Exercises = () => {
       .then(() => console.log('Youre Signed out'));
   };
   return (
-    <View style={tw('pt-20 items-center')}>
-      <TouchableOpacity onPress={logOff}>
-        <Text>Temp Log Out</Text>
-      </TouchableOpacity>
-      <View style={tw('bg-blue-200 px-3 py-1 rounded-full')}>
-        <Text style={tw('text-blue-800 font-semibold')}>Hello Tailwind</Text>
+    <View style={tw('pt-20 items-center bg-neutral-900 h-full ')}>
+      <View style={tw('bg-indigo-200 px-3 py-1 rounded-full')}>
+        <TouchableOpacity onPress={logOff}>
+          <Text style={tw('text-indigo-800 font-semibold')}>Temp Log Out</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
