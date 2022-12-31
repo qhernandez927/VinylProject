@@ -10,7 +10,7 @@ import {
 import {useTailwind} from 'tailwind-rn';
 import auth from '@react-native-firebase/auth';
 
-const Exercises = () => {
+const Workout = () => {
   const tw = useTailwind();
 
   const logOff = () => {
@@ -30,4 +30,4 @@ const Exercises = () => {
   );
 };
 
-export default Exercises;
+export default Workout;

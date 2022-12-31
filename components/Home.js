@@ -6,7 +6,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
-import Exercises from './Exercises';
+import Workout from './Workout';
 
 const Home = () => {
   const Tab = createBottomTabNavigator();
@@ -24,7 +24,7 @@ const Home = () => {
     <Tab.Navigator
       screenOptions={({route}) => ({
         tabBarIcon: ({focused, color, size}) => {
-          if (route.name === 'Exercises') {
+          if (route.name === 'Workout') {
             return (
               <MaterialCommunityIcon
                 name="weight-lifter"
@@ -54,7 +54,7 @@ const Home = () => {
         tabBarInactiveTintColor: '#4338CA',
         tabBarShowLabel: false,
       })}>
-      <Tab.Screen name="Exercises" component={Exercises} />
+      <Tab.Screen name="Workout" component={Workout} />
     </Tab.Navigator>
   );
 };
