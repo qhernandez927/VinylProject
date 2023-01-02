@@ -12,11 +12,11 @@ import {useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {firebase} from '@react-native-firebase/auth';
+import HomeTabs from './stacks/HomeTabs.js';
 
 const App = () => {
-  const [user, setUser] = useState({loggedIn: false});
+  const [appUser, setUser] = useState({loggedIn: false});
   const Stack = createNativeStackNavigator();
-  const tw = useTailwind();
 
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged(user => {
@@ -44,8 +44,8 @@ const App = () => {
             headerBackVisible: true,
             headerBackTitleVisible: false,
           }}>
-          {user.loggedIn ? (
-            <Stack.Screen name="Home" component={Home} />
+          {appUser.loggedIn ? (
+            <Stack.Screen name="HomeTabs" component={HomeTabs} />
           ) : (
             <>
               <Stack.Screen name="Login" component={Login} />

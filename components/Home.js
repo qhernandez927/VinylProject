@@ -14,13 +14,6 @@ const Home = () => {
 
   const tw = useTailwind();
 
-  const logOff = () => {
-    // TODO: check if user is logged in
-    auth()
-      .signOut()
-      .then(() => console.log('Youre Signed out'));
-  };
-
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
