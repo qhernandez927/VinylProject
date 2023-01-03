@@ -4,7 +4,6 @@ import {SafeAreaView, Text, View} from 'react-native';
 import {TailwindProvider} from 'tailwind-rn';
 import utilities from './tailwind.json';
 import {useTailwind} from 'tailwind-rn';
-import Home from './components/Home';
 import Login from './components/Login';
 import NewUser from './components/NewUser';
 
