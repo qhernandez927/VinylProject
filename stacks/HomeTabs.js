@@ -21,7 +21,7 @@ const HomeTabs = () => {
               />
             );
           }
-          if (route.name === 'Profile') {
+          if (route.name === 'ProfileStackScreen') {
             return (
               <FontAwesomeIcon name="user-circle-o" size={30} color={color} />
             );
@@ -44,7 +44,7 @@ const HomeTabs = () => {
         tabBarShowLabel: false,
       })}>
       <Tab.Screen name="WorkoutStackScreen" component={WorkoutStackScreen} />
-      <Tab.Screen name="Profile" component={ProfileStackScreen} />
+      <Tab.Screen name="ProfileStackScreen" component={ProfileStackScreen} />
     </Tab.Navigator>
   );
 };
