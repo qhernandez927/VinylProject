@@ -12,6 +12,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {firebase} from '@react-native-firebase/auth';
 import HomeTabs from './stacks/HomeTabs.js';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const App = () => {
   const [appUser, setUser] = useState({loggedIn: false});

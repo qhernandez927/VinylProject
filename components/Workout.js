@@ -9,11 +9,9 @@ import {
 } from 'react-native';
 import {useTailwind} from 'tailwind-rn';
 import auth from '@react-native-firebase/auth';
-import {useNavigation} from '@react-navigation/native';
 
-const Workout = () => {
+const Workout = ({navigation}) => {
   const tw = useTailwind();
-  const navigation = useNavigation();
 
   const logOff = () => {
     // TODO: check if user is logged in

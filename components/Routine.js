@@ -1,10 +1,10 @@
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 import {useState} from 'react';
 import React from 'react';
 import {useTailwind} from 'tailwind-rn';
 
-const Routine = () => {
+const Routine = ({navigation}) => {
   const [title, setTitle] = useState('');
   const tw = useTailwind();
 
@@ -25,9 +25,10 @@ const Routine = () => {
       />
 
       <TouchableOpacity
-        style={tw('bg-indigo-400 rounded-lg w-72 h-10 mt-3 text-slate-200')}>
+        style={tw('bg-indigo-400 rounded-lg w-72 h-10 mt-3 text-slate-200')}
+        onPress={() => navigation.navigate('ExerciseScreen')}>
         <Text style={tw('text-slate-200 text-2xl text-center mt-1 ')}>
-          Add Exercise
+          + Add Exercise
         </Text>
       </TouchableOpacity>
     </View>
