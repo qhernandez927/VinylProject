@@ -7,7 +7,15 @@ const WorkoutStackScreen = () => {
   const WorkoutStack = createNativeStackNavigator();
 
   return (
-    <WorkoutStack.Navigator>
+    <WorkoutStack.Navigator
+      initialRouteName="Workout"
+      screenOptions={{
+        headerTitle: '',
+        headerTransparent: true,
+        headerStyle: {backgroundColor: 'transparent'},
+        headerBackVisible: true,
+        headerBackTitleVisible: false,
+      }}>
       <WorkoutStack.Screen name="Workout" component={Workout} />
       <WorkoutStack.Screen name="Routine" component={Routine} />
     </WorkoutStack.Navigator>
