@@ -1,4 +1,4 @@
-# LiftingProject
+# VinylProject
 
 App to track my lifting data
 
