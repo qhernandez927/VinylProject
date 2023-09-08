@@ -2,28 +2,24 @@
   margin: 0.25rem
 }
 
-.mb-10 {
-  margin-bottom: 2.5rem
+.mt-1 {
+  margin-top: 0.25rem
 }
 
 .mt-3 {
   margin-top: 0.75rem
 }
 
-.mt-1 {
-  margin-top: 0.25rem
-}
-
 .flex {
   display: flex
 }
 
-.h-full {
-  height: 100%
-}
-
 .h-10 {
   height: 2.5rem
+}
+
+.h-full {
+  height: 100%
 }
 
 .w-72 {
@@ -42,20 +38,16 @@
   justify-content: center
 }
 
-.rounded-lg {
-  border-radius: 0.5rem
-}
-
 .rounded-full {
   border-radius: 9999px
 }
 
-.border-2 {
-  border-width: 2px
+.rounded-lg {
+  border-radius: 0.5rem
 }
 
-.border-t-0 {
-  border-top-width: 0px
+.border-2 {
+  border-width: 2px
 }
 
 .border-b-2 {
@@ -67,9 +59,14 @@
   border-color: rgb(67 56 202 / var(--tw-border-opacity))
 }
 
-.bg-neutral-900 {
+.border-light-tertiary {
+  --tw-border-opacity: 1;
+  border-color: rgb(240 240 240 / var(--tw-border-opacity))
+}
+
+.bg-indigo-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(23 23 23 / var(--tw-bg-opacity))
+  background-color: rgb(199 210 254 / var(--tw-bg-opacity))
 }
 
 .bg-indigo-400 {
@@ -77,9 +74,19 @@
   background-color: rgb(129 140 248 / var(--tw-bg-opacity))
 }
 
-.bg-indigo-200 {
+.bg-light-primary {
   --tw-bg-opacity: 1;
-  background-color: rgb(199 210 254 / var(--tw-bg-opacity))
+  background-color: rgb(76 141 153 / var(--tw-bg-opacity))
+}
+
+.bg-light-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(184 158 88 / var(--tw-bg-opacity))
+}
+
+.bg-neutral-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 23 23 / var(--tw-bg-opacity))
 }
 
 .px-3 {
@@ -104,11 +111,6 @@
   text-align: center
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem
@@ -118,9 +120,8 @@
   font-weight: 600
 }
 
-.text-slate-200 {
-  --tw-text-opacity: 1;
-  color: rgb(226 232 240 / var(--tw-text-opacity))
+.italic {
+  font-style: italic
 }
 
 .text-indigo-400 {
@@ -133,6 +134,16 @@
   color: rgb(55 48 163 / var(--tw-text-opacity))
 }
 
+.text-light-primary {
+  --tw-text-opacity: 1;
+  color: rgb(76 141 153 / var(--tw-text-opacity))
+}
+
+.text-slate-200 {
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity))
+}
+
 .underline {
   text-decoration-line: underline
 }
@@ -143,4 +154,24 @@
 
 .decoration-solid {
   text-decoration-style: solid
+}
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  
 }

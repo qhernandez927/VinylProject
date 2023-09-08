@@ -35,17 +35,11 @@ const Login = ({navigation}) => {
   // Leaving here for now
 
   return (
-    <View
-      style={tw(
-        'flex items-center content-center justify-center bg-neutral-900 h-full',
-      )}>
-      <Text
-        style={tw('text-4xl text-slate-200 mb-10 text-center font-semibold')}>
-        REPS
-      </Text>
+    <View className="flex items-center content-center justify-center bg-light-primary h-full">
+      <Text style={styles.titleText}>SpinSpin</Text>
       <TextInput
         style={tw(
-          'border-indigo-700 rounded-lg text-2xl border-2 pl-2 w-72 h-10 m-1 ',
+          'border-light-tertiary rounded-lg text-2xl border-2 pl-2 w-72 h-10 m-1 ',
         )}
         autoCapitalize="none"
         onChangeText={userEmail => setEmail(userEmail)}
@@ -64,9 +58,11 @@ const Login = ({navigation}) => {
         onChangeText={userPassword => setPassword(userPassword)}
       />
       <TouchableOpacity
-        style={tw('bg-indigo-400 rounded-lg w-72 h-10 mt-3 text-slate-200')}
+        style={tw(
+          'bg-light-secondary rounded-lg w-72 h-10 mt-3 text-slate-200',
+        )}
         onPress={() => signUserIn(email, password)}>
-        <Text style={tw('text-slate-200 text-2xl text-center mt-1 ')}>
+        <Text style={tw('text-light-primary text-2xl text-center mt-1 ')}>
           Continue
         </Text>
       </TouchableOpacity>
@@ -87,6 +83,11 @@ const Login = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
+  titleText: {
+    fontFamily: 'Pacifico',
+    fontWeight: 'bold',
+    fontSize: 40,
+  },
   signInClickText: {
     color: '#EAB84E',
     fontSize: 20,

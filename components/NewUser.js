@@ -46,10 +46,7 @@ const NewUser = () => {
   };
 
   return (
-    <View
-      style={tw(
-        'flex items-center content-center justify-center bg-neutral-900 h-full',
-      )}>
+    <View style={tw('flex items-center content-center justify-center  h-full')}>
       <TextInput
         style={tw(
           'border-indigo-700 rounded-lg text-2xl border-2 pl-2 w-72 h-10 m-1 ',
