@@ -84,7 +84,7 @@ const Login = ({navigation}) => {
 
 const styles = StyleSheet.create({
   titleText: {
-    fontFamily: 'Pacifico',
+    fontFamily: 'Raleway',
     fontWeight: 'bold',
     fontSize: 40,
   },
