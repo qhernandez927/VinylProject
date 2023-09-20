@@ -9,9 +9,25 @@ import {
 } from 'react-native';
 import {useTailwind} from 'tailwind-rn';
 import auth from '@react-native-firebase/auth';
+import WebView from 'react-native-webview';
 
 const Workout = ({navigation}) => {
   const tw = useTailwind();
+
+  // const spotifyLogin = async () => {
+  //   try {
+  //     const response = await fetch('http://localhost:3000/spotify');
+  //     const spotifyWebView = response.url;
+  //     console.log(spotifyWebView);
+  //     return (
+  //       <View>
+  //         <WebView source={{uri: response.url}} style={styles.spotifyWebView} />
+  //       </View>
+  //     );
+  //   } catch (e) {
+  //     console.error(e);
+  //   }
+  // };
 
   const logOff = () => {
     // TODO: check if user is logged in
@@ -31,8 +47,21 @@ const Workout = ({navigation}) => {
           <Text style={tw('text-indigo-800 font-semibold')}>Temp Log Out</Text>
         </TouchableOpacity>
       </View>
+      <View style={tw('bg-indigo-200 px-3 py-1 rounded-full')}>
+        <TouchableOpacity onPress={() => navigation.navigate('TestWebView')}>
+          <Text style={tw('text-indigo-800 font-semibold')}>Spotify login</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
 
 export default Workout;
+
+const styles = StyleSheet.create({
+  spotifyWebView: {
+    flex: 1,
+    height: '100%',
+    width: '100%',
+  },
+});

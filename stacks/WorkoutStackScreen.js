@@ -3,6 +3,7 @@ import React from 'react';
 import ExerciseScreen from '../components/ExerciseScreen';
 import Routine from '../components/Routine';
 import Workout from '../components/Workout';
+import TestWebView from '../components/TestWebView';
 
 const WorkoutStackScreen = () => {
   const WorkoutStack = createNativeStackNavigator();
@@ -20,6 +21,7 @@ const WorkoutStackScreen = () => {
       <WorkoutStack.Screen name="Workout" component={Workout} />
       <WorkoutStack.Screen name="Routine" component={Routine} />
       <WorkoutStack.Screen name="ExerciseScreen" component={ExerciseScreen} />
+      <WorkoutStack.Screen name="TestWebView" component={TestWebView} />
     </WorkoutStack.Navigator>
   );
 };
