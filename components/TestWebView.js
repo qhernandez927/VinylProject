@@ -1,18 +1,36 @@
-import {View, Text} from 'react-native';
+import {View, Text, Linking, Platform} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import WebView from 'react-native-webview';
 import {StyleSheet} from 'react-native';
 
-const TestWebView = () => {
+const TestWebView = ({navigation}) => {
   const [uri, setUri] = useState();
-  const googleTest = 'https://www.google.com/';
+
   useEffect(() => {
-    fetch('http://localhost:3000/spotify', {})
-      .then(data => {
-        setUri(data.url);
-      })
-      .catch(error => console.log(error));
-  }, []);
+    const navigate = url => {
+      console.log('when do we get here nav function');
+      const route = url.replace(/.*?:\/\//g, '');
+      const id = route.match(/\/([^\/]+)\/?$/)[1];
+      const routeName = route.split('/')[0];
+
+      if (routeName === 'workout') {
+        navigation.navigate('Workout');
+      }
+    };
+    const handleOpenURL = event => {
+      console.log(event.url, 'is this null');
+      navigate(event.url);
+    };
+    Linking.addEventListener('url', handleOpenURL);
+    const fetchSpotifyAuth = () => {
+      fetch('http://localhost:3000/spotify', {})
+        .then(data => {
+          setUri(data.url);
+        })
+        .catch(error => console.log(error));
+    };
+    fetchSpotifyAuth();
+  }, [navigation]);
 
   return (
     <View style={{flex: 1}}>

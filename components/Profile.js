@@ -4,7 +4,7 @@ import {TouchableOpacity, Text, View} from 'react-native';
 const Profile = () => {
   return (
     <View>
-      <Text>Hello Profile</Text>
+      <Text>Little Ronan is the best</Text>
     </View>
   );
 };

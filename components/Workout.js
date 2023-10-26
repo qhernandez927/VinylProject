@@ -14,21 +14,6 @@ import WebView from 'react-native-webview';
 const Workout = ({navigation}) => {
   const tw = useTailwind();
 
-  // const spotifyLogin = async () => {
-  //   try {
-  //     const response = await fetch('http://localhost:3000/spotify');
-  //     const spotifyWebView = response.url;
-  //     console.log(spotifyWebView);
-  //     return (
-  //       <View>
-  //         <WebView source={{uri: response.url}} style={styles.spotifyWebView} />
-  //       </View>
-  //     );
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
-  // };
-
   const logOff = () => {
     // TODO: check if user is logged in
     auth()
